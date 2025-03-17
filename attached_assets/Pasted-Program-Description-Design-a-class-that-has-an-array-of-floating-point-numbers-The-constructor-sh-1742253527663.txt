@@ -1,0 +1,31 @@
+Program Description:
+Design a class that has an array of floating-point numbers. The constructor should accept an
+integer argument and dynamically allocate the array to hold that many numbers. The destructor
+should free the memory held by the array. In addition, there should be member functions to
+perform the following operations:
+• Store a number in any element of the array
+• Retrieve a number from any element of the array
+• Return the highest value stored in the array
+• Return the lowest value stored in the array
+• Return the average of all the numbers stored in the array
+Demonstrate the class in a program.
+ADT for NumberArray Class
+Note – you can change the function names and variable identifiers, the names provided here
+are for illustrative purposes (although you can use them if you want to).
+Domain – A positive integer to hold the size of the array. This integer should have a default
+value assigned. A pointer to double to access the memory for the dynamic array. The array
+values are to be be initialized to 0.
+Operations
+1. Include a constructor with the size of the array as a parameter. Assign the default size to
+this parameter which will be the size of the array if it the constructor is called with no
+parameters. The parameter provided by a client will serve as the size of the array if supplied.
+Here is an example prototype for the constructor
+This constructor should set the size of the array based on the default or the client input,
+allocate the storage for the array and store the address in the pointer variable, then fill the
+array with zeros.
+Here is an example prototype for this constructor:
+NumberArray(int size = MAX_SIZE);
+The default size, MAX_SIZE is an integer constant. Declare it as static in the header file so
+you can assign it a value. This makes it easy to change the default size if needed.
+2. Include a destructor to release the memory allocated by the objects when they go out of
+scope. Print a message from the destructor showing that it has run 

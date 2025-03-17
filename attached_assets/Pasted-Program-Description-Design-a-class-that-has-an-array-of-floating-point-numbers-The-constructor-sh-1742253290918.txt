@@ -1,0 +1,66 @@
+Program Description:
+Design a class that has an array of floating-point numbers. The constructor should accept an
+integer argument and dynamically allocate the array to hold that many numbers. The destructor
+should free the memory held by the array. In addition, there should be member functions to
+perform the following operations:
+• Store a number in any element of the array
+• Retrieve a number from any element of the array
+• Return the highest value stored in the array
+• Return the lowest value stored in the array
+• Return the average of all the numbers stored in the array
+Demonstrate the class in a program.
+ADT for NumberArray Class
+Note – you can change the function names and variable identifiers, the names provided here
+are for illustrative purposes (although you can use them if you want to).
+Domain – A positive integer to hold the size of the array. This integer should have a default
+value assigned. A pointer to double to access the memory for the dynamic array. The array
+values are to be be initialized to 0.
+Operations
+1. Include a constructor with the size of the array as a parameter. Assign the default size to
+this parameter which will be the size of the array if it the constructor is called with no
+parameters. The parameter provided by a client will serve as the size of the array if supplied.
+Here is an example prototype for the constructor
+This constructor should set the size of the array based on the default or the client input,
+allocate the storage for the array and store the address in the pointer variable, then fill the
+array with zeros.
+Here is an example prototype for this constructor:
+NumberArray(int size = MAX_SIZE);
+The default size, MAX_SIZE is an integer constant. Declare it as static in the header file so
+you can assign it a value. This makes it easy to change the default size if needed.
+2. Include a destructor to release the memory allocated by the objects when they go out of
+scope. Print a message from the destructor showing that it has run (this is not usual, most of
+the time destructors are silent).
+3. Write a member function to store a number in any element of the array. The function takes
+the array index and the value to store. This is a mutator function, so the index supplied by
+the client must be validated to ensure that it is within the bounds of the array. If it is not,
+write an error message and don’t store the value. If it’s valid, store the number at the
+specified location. An example prototype for this function is:
+void setNumber(int index, double value);
+4. Write a member function to retrieve a value from the specified location in the array. Even
+though this is not a mutator function, you should validate the index to make sure it is within
+the bounds of the array. If it is not, write an error message and set the return value to a
+default. Make the default a static named constant in the header file and assign it a value.
+Again, this makes it easy to change the default value if needed in the future. A prototype for
+this function would look like this:
+Int getNumber(int index);
+5. Write a member function to find and return the minimum value in the array. The function
+returns the value rather than the index where it is stored. This is a value that should be
+calculated when needed so it doesn’t get stale if the numbers in the array change.
+6. Write a member function to find and return the maximum value in the array. The function
+returns the value rather than the index where it is stored. This is a value that should be
+calculated when needed so it doesn’t get stale if the numbers in the array change.
+7. Write a member function that calculates and returns the average of the values in the array.
+This is a value that should be calculated when needed so it doesn’t get stale if the numbers
+in the array change.
+8. Write a print member function which displays the values in the array. This is for testing and
+the output does not need to be specially formatted.
+Program Structure
+Separate the specification from the implementation by creating a NumberArray.h file for the
+class definition and a NumberArray.cpp file for the class implementation. Remember to put
+include guards in the header file. Be careful to inline only your simpler functions.
+Test Program
+Write a test program with output that clearly shows what you are testing. Remember to test the
+default constructor and the constructor with parameters. Keep the arrays small (e.g., the default
+size is 10 and the array your program creates should be no bigger than 20). Use the <random>
+library to generate numbers to fill your array. Set the precision for your output to 1 place to the
+right of the decimal point. Include code that tests for out of bounds array indexes where needed.
